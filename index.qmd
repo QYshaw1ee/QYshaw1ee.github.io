@@ -6,4 +6,4 @@ title: "Hello, I am Chloe!"
 
 ### Here is a link to all the things i have done!
 
-[https://github.com/QYshaw1ee/NM2207.githttps://github.com/QYshaw1ee/NM2207.git](https://github.com/QYshaw1ee/NM2207.git)
+<https://github.com/QYshaw1ee/NM2207.git>
