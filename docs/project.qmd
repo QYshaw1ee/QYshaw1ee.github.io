@@ -1,0 +1,24 @@
+---
+title: "Project"
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+friendship<-read.csv("friendship-line-california-calls-in-response-to-covid-19.csv")
+```
+
+```{r}
+glimpse(friendship)
+```
+
+```{r}
+friendship%>%mutate(Year_2020_04= X2020.04.15+X2020.04.16+X2020.04.17+X2020.04.17+X2020.04.18+X2020.04.19+X2020.04.20+X2020.04.21+X2020.04.22+X2020.04.23+X2020.04.24+X2020.04.25+X2020.04.26+X2020.04.27+X2020.04.28+X2020.04.29+X2020.04.30)%>%select(County,Year_2020_04)
+```
+
+```{r}
+
+
+```
