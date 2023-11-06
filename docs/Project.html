@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -207,225 +207,271 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>friendship<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"friendship-line-california-calls-in-response-to-covid-19.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>friendship<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"Covid_calls.csv"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>friendship</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(friendship)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(friendship)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 60
-Columns: 146
-$ County      &lt;chr&gt; "Alameda", "Alpine", "Amador", "Butte", "Calaveras", "Colu…
-$ X2020.04.15 &lt;int&gt; 9, 0, 2, 2, 1, 0, 0, 0, 0, 2, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.04.16 &lt;int&gt; 10, 0, 1, 2, 0, 0, 0, 0, 0, 4, 0, 1, 2, 0, 0, 0, 0, 0, 0, …
-$ X2020.04.17 &lt;int&gt; 13, 0, 3, 5, 0, 0, 0, 0, 0, 3, 0, 3, 1, 0, 2, 0, 0, 0, 0, …
-$ X2020.04.18 &lt;int&gt; 2, 0, 1, 3, 0, 0, 0, 0, 0, 3, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.04.19 &lt;int&gt; 7, 0, 0, 3, 0, 0, 0, 0, 0, 9, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0…
-$ X2020.04.20 &lt;int&gt; 7, 0, 1, 4, 0, 0, 0, 0, 0, 6, 0, 2, 1, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.04.21 &lt;int&gt; 10, 0, 4, 2, 0, 0, 0, 0, 0, 3, 0, 1, 1, 0, 1, 0, 0, 0, 0, …
-$ X2020.04.22 &lt;int&gt; 8, 0, 1, 4, 0, 0, 0, 0, 0, 2, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0…
-$ X2020.04.23 &lt;int&gt; 8, 0, 3, 4, 0, 0, 0, 0, 0, 1, 0, 4, 3, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.04.24 &lt;int&gt; 71, 0, 3, 7, 5, 0, 0, 0, 0, 37, 0, 9, 4, 3, 33, 3, 3, 0, 0…
-$ X2020.04.25 &lt;int&gt; 40, 0, 1, 11, 2, 0, 0, 0, 0, 13, 0, 1, 3, 0, 12, 0, 2, 0, …
-$ X2020.04.26 &lt;int&gt; 20, 0, 0, 9, 2, 0, 0, 0, 0, 2, 0, 1, 3, 0, 2, 1, 0, 0, 0, …
-$ X2020.04.27 &lt;int&gt; 38, 0, 0, 4, 0, 0, 0, 0, 0, 25, 0, 2, 1, 0, 11, 0, 0, 1, 0…
-$ X2020.04.28 &lt;int&gt; 26, 0, 2, 3, 0, 0, 0, 0, 0, 21, 1, 2, 2, 0, 7, 0, 0, 1, 0,…
-$ X2020.04.29 &lt;int&gt; 28, 0, 1, 5, 0, 0, 0, 0, 0, 7, 0, 2, 2, 0, 5, 0, 0, 0, 0, …
-$ X2020.04.30 &lt;int&gt; 21, 0, 3, 5, 0, 0, 0, 0, 0, 8, 0, 1, 4, 0, 2, 0, 0, 0, 0, …
-$ X2020.05.01 &lt;int&gt; 19, 0, 4, 8, 3, 0, 0, 0, 0, 8, 0, 1, 5, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.02 &lt;int&gt; 6, 0, 3, 0, 1, 0, 0, 0, 0, 2, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.05.03 &lt;int&gt; 6, 0, 1, 8, 1, 0, 0, 0, 0, 1, 0, 2, 1, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.05.04 &lt;int&gt; 22, 0, 1, 9, 1, 0, 0, 0, 0, 3, 0, 1, 2, 0, 2, 0, 0, 0, 0, …
-$ X2020.05.05 &lt;int&gt; 18, 0, 5, 1, 0, 0, 0, 0, 0, 5, 0, 2, 2, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.06 &lt;int&gt; 10, 0, 3, 3, 0, 0, 0, 0, 0, 3, 0, 3, 1, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.07 &lt;int&gt; 3, 0, 2, 5, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 3, 0, 1, 0, 0, 0…
-$ X2020.05.08 &lt;int&gt; 14, 0, 2, 6, 2, 0, 0, 0, 0, 2, 0, 1, 1, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.09 &lt;int&gt; 11, 0, 2, 6, 0, 0, 0, 0, 0, 2, 0, 1, 2, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.10 &lt;int&gt; 7, 0, 3, 7, 1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.05.11 &lt;int&gt; 12, 0, 1, 4, 0, 0, 0, 0, 0, 3, 0, 1, 3, 0, 1, 0, 1, 0, 0, …
-$ X2020.05.12 &lt;int&gt; 11, 0, 1, 6, 2, 0, 0, 0, 0, 1, 0, 3, 1, 0, 2, 0, 1, 0, 0, …
-$ X2020.05.13 &lt;int&gt; 11, 0, 1, 5, 0, 0, 0, 0, 0, 2, 0, 1, 1, 0, 5, 0, 0, 0, 0, …
-$ X2020.05.14 &lt;int&gt; 15, 0, 5, 7, 0, 0, 0, 0, 0, 2, 0, 7, 1, 0, 2, 0, 0, 0, 0, …
-$ X2020.05.15 &lt;int&gt; 12, 0, 4, 6, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 7, 0, 0, 0, 0, …
-$ X2020.05.16 &lt;int&gt; 11, 0, 2, 5, 0, 0, 0, 0, 0, 0, 0, 4, 2, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.17 &lt;int&gt; 8, 0, 5, 9, 0, 0, 0, 0, 0, 2, 0, 2, 1, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.05.18 &lt;int&gt; 8, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 4, 1, 0, 5, 0, 1, 0, 0, 0…
-$ X2020.05.19 &lt;int&gt; 7, 0, 1, 2, 0, 0, 0, 0, 0, 1, 0, 1, 4, 0, 4, 0, 0, 0, 0, 0…
-$ X2020.05.20 &lt;int&gt; 7, 0, 2, 3, 1, 0, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.05.21 &lt;int&gt; 8, 0, 4, 5, 2, 0, 0, 0, 0, 3, 0, 1, 2, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.05.22 &lt;int&gt; 7, 0, 1, 7, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.05.23 &lt;int&gt; 7, 0, 1, 9, 1, 0, 0, 0, 0, 0, 0, 4, 0, 0, 2, 0, 1, 0, 0, 0…
-$ X2020.05.24 &lt;int&gt; 5, 0, 0, 11, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, …
-$ X2020.05.25 &lt;int&gt; 15, 0, 2, 7, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 2, 0, 0, 0, 0, …
-$ X2020.05.26 &lt;int&gt; 13, 0, 3, 4, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 2, 1, 0, 0, 0, …
-$ X2020.05.27 &lt;int&gt; 5, 0, 0, 5, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.05.28 &lt;int&gt; 5, 0, 4, 4, 5, 0, 0, 0, 0, 6, 0, 3, 0, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.05.29 &lt;int&gt; 8, 0, 7, 5, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 0, 0, 0…
-$ X2020.05.30 &lt;int&gt; 11, 0, 2, 7, 6, 0, 0, 0, 0, 1, 1, 5, 1, 0, 1, 0, 0, 0, 0, …
-$ X2020.05.31 &lt;int&gt; 14, 0, 10, 7, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 3, 0, 0, 0, 0,…
-$ X2020.06.01 &lt;int&gt; 15, 0, 2, 6, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 4, 1, 1, 0, 0, …
-$ X2020.06.02 &lt;int&gt; 15, 0, 1, 2, 0, 0, 0, 0, 0, 4, 0, 6, 0, 0, 2, 2, 0, 0, 0, …
-$ X2020.06.03 &lt;int&gt; 13, 0, 2, 4, 3, 0, 0, 0, 0, 2, 0, 1, 1, 0, 5, 0, 0, 0, 0, …
-$ X2020.06.04 &lt;int&gt; 18, 0, 6, 9, 0, 0, 0, 0, 0, 4, 0, 2, 1, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.05 &lt;int&gt; 12, 0, 7, 9, 0, 0, 0, 0, 0, 7, 0, 4, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.06 &lt;int&gt; 9, 0, 2, 8, 0, 0, 0, 0, 0, 5, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.06.07 &lt;int&gt; 13, 0, 1, 5, 5, 0, 0, 0, 0, 3, 0, 5, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.08 &lt;int&gt; 7, 0, 7, 5, 2, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.06.09 &lt;int&gt; 16, 0, 5, 6, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 2, 0, 0, 0, 0, …
-$ X2020.06.10 &lt;int&gt; 14, 0, 4, 6, 1, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, …
-$ X2020.06.11 &lt;int&gt; 15, 0, 1, 9, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 2, 0, 0, 0, 0, …
-$ X2020.06.12 &lt;int&gt; 15, 0, 5, 3, 0, 0, 0, 0, 0, 9, 0, 1, 0, 0, 3, 0, 0, 0, 0, …
-$ X2020.06.13 &lt;int&gt; 13, 0, 4, 3, 0, 0, 0, 0, 0, 4, 1, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.14 &lt;int&gt; 15, 0, 1, 7, 1, 0, 0, 0, 0, 9, 0, 1, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.15 &lt;int&gt; 9, 0, 4, 4, 0, 0, 0, 0, 0, 10, 0, 2, 0, 0, 3, 0, 0, 0, 0, …
-$ X2020.06.16 &lt;int&gt; 9, 0, 0, 5, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.06.17 &lt;int&gt; 12, 0, 0, 10, 1, 0, 0, 0, 0, 5, 0, 4, 1, 0, 1, 0, 0, 0, 0,…
-$ X2020.06.18 &lt;int&gt; 16, 0, 5, 8, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.19 &lt;int&gt; 9, 0, 0, 7, 0, 0, 0, 0, 0, 10, 0, 3, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.20 &lt;int&gt; 9, 0, 5, 2, 0, 0, 0, 0, 0, 7, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.06.21 &lt;int&gt; 5, 0, 3, 5, 0, 0, 0, 0, 0, 8, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.06.22 &lt;int&gt; 9, 0, 2, 6, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.06.23 &lt;int&gt; 9, 0, 6, 2, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.06.24 &lt;int&gt; 16, 0, 4, 3, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.25 &lt;int&gt; 11, 0, 2, 9, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 1, 0, 1, 0, 0, …
-$ X2020.06.26 &lt;int&gt; 8, 0, 4, 6, 0, 0, 0, 0, 0, 6, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.06.27 &lt;int&gt; 12, 0, 4, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.28 &lt;int&gt; 11, 0, 1, 4, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.06.29 &lt;int&gt; 11, 0, 3, 3, 1, 0, 0, 0, 0, 8, 0, 3, 1, 0, 0, 0, 1, 0, 0, …
-$ X2020.06.30 &lt;int&gt; 10, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
-$ X2020.07.01 &lt;int&gt; 10, 0, 1, 6, 0, 0, 0, 0, 0, 3, 0, 1, 1, 0, 2, 0, 0, 0, 0, …
-$ X2020.07.02 &lt;int&gt; 16, 0, 3, 7, 1, 0, 0, 0, 0, 9, 0, 2, 1, 0, 1, 0, 0, 0, 0, …
-$ X2020.07.03 &lt;int&gt; 18, 0, 1, 7, 0, 0, 0, 0, 0, 5, 0, 0, 3, 0, 2, 0, 0, 0, 0, …
-$ X2020.07.04 &lt;int&gt; 5, 0, 1, 2, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.07.05 &lt;int&gt; 10, 0, 3, 3, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, …
-$ X2020.07.06 &lt;int&gt; 7, 0, 3, 6, 1, 0, 0, 0, 0, 9, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.07.07 &lt;int&gt; 7, 0, 2, 5, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.07.08 &lt;int&gt; 9, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.07.09 &lt;int&gt; 11, 0, 3, 5, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, …
-$ X2020.07.10 &lt;int&gt; 12, 0, 4, 6, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.07.11 &lt;int&gt; 6, 0, 1, 3, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.07.12 &lt;int&gt; 8, 0, 1, 4, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0…
-$ X2020.07.13 &lt;int&gt; 14, 0, 1, 2, 2, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, …
-$ X2020.07.14 &lt;int&gt; 10, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, …
-$ X2020.07.15 &lt;int&gt; 9, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0…
-$ X2020.07.16 &lt;int&gt; 9, 0, 4, 7, 0, 0, 0, 0, 0, 3, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0…
-$ X2020.07.17 &lt;int&gt; 14, 0, 3, 5, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.07.18 &lt;int&gt; 6, 0, 4, 5, 1, 0, 0, 0, 0, 2, 0, 3, 0, 0, 4, 0, 0, 0, 0, 0…
-$ X2020.07.19 &lt;int&gt; 12, 0, 0, 5, 0, 0, 0, 0, 0, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, …
-$ X2020.07.20 &lt;int&gt; 11, 0, 3, 3, 0, 0, 0, 0, 0, 1, 0, 2, 1, 0, 2, 1, 0, 0, 0, …
-$ X2020.07.21 &lt;int&gt; 14, 0, 2, 3, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 3, 0, 0, 0, 0, …
-$ X2020.07.22 &lt;int&gt; 6, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.07.23 &lt;int&gt; 10, 0, 1, 3, 0, 0, 0, 0, 0, 7, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.07.24 &lt;int&gt; 11, 0, 6, 3, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 5, 0, 0, 0, 0, …
-$ X2020.07.25 &lt;int&gt; 13, 0, 3, 5, 1, 0, 0, 0, 0, 4, 0, 1, 3, 0, 4, 1, 0, 0, 0, …
-$ X2020.07.26 &lt;int&gt; 16, 0, 1, 5, 0, 0, 0, 0, 0, 4, 0, 7, 0, 1, 2, 0, 0, 0, 0, …
-$ X2020.07.27 &lt;int&gt; 7, 0, 3, 6, 0, 0, 0, 0, 0, 6, 0, 3, 0, 0, 7, 3, 0, 0, 0, 0…
-$ X2020.07.28 &lt;int&gt; 9, 0, 1, 4, 0, 0, 0, 0, 0, 8, 0, 2, 0, 0, 2, 7, 0, 0, 0, 0…
-$ X2020.07.29 &lt;int&gt; 11, 0, 2, 3, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 5, 2, 0, 0, 0, …
-$ X2020.07.30 &lt;int&gt; 10, 0, 0, 6, 1, 0, 0, 0, 0, 3, 0, 5, 1, 0, 0, 1, 0, 0, 0, …
-$ X2020.07.31 &lt;int&gt; 11, 0, 3, 4, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 9, 0, 0, 0, 0, …
-$ X2020.08.01 &lt;int&gt; 8, 0, 2, 2, 0, 0, 0, 0, 0, 4, 0, 4, 0, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.08.02 &lt;int&gt; 10, 0, 3, 6, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 4, 0, 0, 0, 0, …
-$ X2020.08.03 &lt;int&gt; 15, 0, 10, 4, 0, 0, 0, 0, 0, 3, 0, 3, 1, 0, 3, 1, 0, 0, 0,…
-$ X2020.08.04 &lt;int&gt; 17, 0, 3, 3, 1, 0, 0, 0, 0, 5, 0, 4, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.05 &lt;int&gt; 17, 1, 0, 3, 0, 0, 0, 0, 0, 8, 2, 6, 1, 0, 3, 1, 0, 0, 0, …
-$ X2020.08.06 &lt;int&gt; 11, 0, 1, 4, 3, 0, 0, 0, 0, 3, 0, 4, 2, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.07 &lt;int&gt; 11, 0, 4, 5, 1, 0, 0, 0, 0, 2, 0, 2, 0, 0, 5, 0, 0, 0, 0, …
-$ X2020.08.08 &lt;int&gt; 18, 0, 5, 2, 0, 0, 0, 0, 0, 6, 0, 7, 0, 0, 5, 0, 0, 0, 0, …
-$ X2020.08.09 &lt;int&gt; 11, 0, 2, 2, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 7, 0, 0, 0, 0, …
-$ X2020.08.10 &lt;int&gt; 9, 0, 6, 4, 1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.08.11 &lt;int&gt; 12, 0, 0, 4, 1, 0, 0, 0, 0, 5, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.12 &lt;int&gt; 14, 0, 2, 5, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.13 &lt;int&gt; 11, 0, 1, 4, 2, 0, 0, 0, 0, 1, 0, 4, 0, 0, 2, 0, 0, 0, 0, …
-$ X2020.08.14 &lt;int&gt; 13, 0, 3, 6, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.15 &lt;int&gt; 11, 0, 3, 7, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.16 &lt;int&gt; 7, 0, 5, 4, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 4, 0, 0, 0, 0, 0…
-$ X2020.08.17 &lt;int&gt; 8, 0, 2, 7, 0, 0, 0, 0, 0, 5, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0…
-$ X2020.08.18 &lt;int&gt; 15, 0, 3, 8, 1, 0, 0, 0, 0, 2, 0, 0, 1, 0, 2, 0, 0, 0, 0, …
-$ X2020.08.19 &lt;int&gt; 13, 0, 3, 3, 1, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.20 &lt;int&gt; 8, 0, 3, 7, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0…
-$ X2020.08.21 &lt;int&gt; 9, 0, 2, 4, 1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.08.22 &lt;int&gt; 5, 0, 4, 1, 0, 0, 0, 0, 0, 4, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0…
-$ X2020.08.23 &lt;int&gt; 4, 0, 0, 3, 0, 0, 0, 0, 0, 6, 0, 4, 0, 2, 1, 1, 1, 0, 0, 0…
-$ X2020.08.24 &lt;int&gt; 11, 0, 5, 4, 0, 0, 0, 0, 0, 5, 0, 3, 0, 1, 0, 0, 0, 0, 0, …
-$ X2020.08.25 &lt;int&gt; 10, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 2, 0, 0, 0, 0, …
-$ X2020.08.26 &lt;int&gt; 14, 0, 4, 4, 1, 0, 0, 0, 0, 1, 0, 3, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.08.27 &lt;int&gt; 10, 0, 4, 3, 0, 0, 0, 0, 0, 3, 0, 1, 1, 0, 1, 1, 0, 0, 0, …
-$ X2020.08.28 &lt;int&gt; 7, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0…
-$ X2020.08.29 &lt;int&gt; 7, 0, 1, 3, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.08.30 &lt;int&gt; 12, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 2, 0, 0, 0, 0, …
-$ X2020.08.31 &lt;int&gt; 9, 0, 3, 3, 0, 0, 0, 0, 0, 2, 0, 2, 1, 0, 3, 0, 0, 0, 0, 0…
-$ X2020.09.01 &lt;int&gt; 16, 0, 2, 4, 1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 4, 0, 0, 0, 0, …
-$ X2020.09.02 &lt;int&gt; 13, 0, 0, 3, 1, 0, 0, 0, 0, 4, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.09.03 &lt;int&gt; 20, 0, 4, 6, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.09.04 &lt;int&gt; 14, 0, 0, 3, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 2, 0, 2, 0, 0, …
-$ X2020.09.05 &lt;int&gt; 18, 0, 5, 5, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 1, 0, 0, 0, 0, …
-$ X2020.09.06 &lt;int&gt; 11, 0, 0, 5, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0, …</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'magrittr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    set_names</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidyr':
+
+    extract</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>friendship<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">Year_2020_04=</span> X2020.<span class="fl">04.15</span><span class="sc">+</span>X2020.<span class="fl">04.16</span><span class="sc">+</span>X2020.<span class="fl">04.17</span><span class="sc">+</span>X2020.<span class="fl">04.17</span><span class="sc">+</span>X2020.<span class="fl">04.18</span><span class="sc">+</span>X2020.<span class="fl">04.19</span><span class="sc">+</span>X2020.<span class="fl">04.20</span><span class="sc">+</span>X2020.<span class="fl">04.21</span><span class="sc">+</span>X2020.<span class="fl">04.22</span><span class="sc">+</span>X2020.<span class="fl">04.23</span><span class="sc">+</span>X2020.<span class="fl">04.24</span><span class="sc">+</span>X2020.<span class="fl">04.25</span><span class="sc">+</span>X2020.<span class="fl">04.26</span><span class="sc">+</span>X2020.<span class="fl">04.27</span><span class="sc">+</span>X2020.<span class="fl">04.28</span><span class="sc">+</span>X2020.<span class="fl">04.29</span><span class="sc">+</span>X2020.<span class="fl">04.30</span>)<span class="sc">%&gt;%</span><span class="fu">select</span>(County,Year_2020_04)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>April<span class="ot">&lt;-</span>friendship<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">Year_2020_04=</span>X2020.<span class="fl">04.15</span><span class="sc">+</span> X2020.<span class="fl">04.16</span><span class="sc">+</span>X2020.<span class="fl">04.17</span><span class="sc">+</span>X2020.<span class="fl">04.17</span><span class="sc">+</span>X2020.<span class="fl">04.18</span><span class="sc">+</span>X2020.<span class="fl">04.19</span><span class="sc">+</span>X2020.<span class="fl">04.20</span><span class="sc">+</span>X2020.<span class="fl">04.21</span><span class="sc">+</span>X2020.<span class="fl">04.22</span><span class="sc">+</span>X2020.<span class="fl">04.23</span><span class="sc">+</span>X2020.<span class="fl">04.24</span><span class="sc">+</span>X2020.<span class="fl">04.25</span><span class="sc">+</span>X2020.<span class="fl">04.26</span><span class="sc">+</span>X2020.<span class="fl">04.27</span><span class="sc">+</span>X2020.<span class="fl">04.28</span><span class="sc">+</span>X2020.<span class="fl">04.29</span><span class="sc">+</span>X2020.<span class="fl">04.30</span>)<span class="sc">%&gt;%</span><span class="fu">select</span>(County,Year_2020_04)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(April)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>May<span class="ot">&lt;-</span>friendship<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">Year_2020_05=</span> X2020.<span class="fl">05.01</span><span class="sc">+</span>X2020.<span class="fl">05.02</span><span class="sc">+</span>X2020.<span class="fl">05.03</span><span class="sc">+</span>X2020.<span class="fl">05.04</span><span class="sc">+</span>X2020.<span class="fl">05.05</span><span class="sc">+</span>X2020.<span class="fl">05.06</span><span class="sc">+</span>X2020.<span class="fl">05.07</span><span class="sc">+</span>X2020.<span class="fl">05.08</span><span class="sc">+</span>X2020.<span class="fl">05.09</span><span class="sc">+</span>X2020.<span class="fl">05.10</span><span class="sc">+</span>X2020.<span class="fl">05.11</span><span class="sc">+</span>X2020.<span class="fl">05.12</span><span class="sc">+</span>X2020.<span class="fl">05.13</span><span class="sc">+</span>X2020.<span class="fl">05.14</span><span class="sc">+</span>X2020.<span class="fl">05.15</span><span class="sc">+</span>X2020.<span class="fl">05.16</span><span class="sc">+</span>X2020.<span class="fl">05.17</span><span class="sc">+</span>X2020.<span class="fl">05.18</span><span class="sc">+</span>X2020.<span class="fl">05.19</span><span class="sc">+</span>X2020.<span class="fl">05.20</span><span class="sc">+</span>X2020.<span class="fl">05.21</span><span class="sc">+</span>X2020.<span class="fl">05.22</span><span class="sc">+</span>X2020.<span class="fl">05.23</span><span class="sc">+</span>X2020.<span class="fl">05.24</span><span class="sc">+</span>X2020.<span class="fl">05.25</span><span class="sc">+</span>X2020.<span class="fl">05.26</span><span class="sc">+</span>X2020.<span class="fl">05.27</span><span class="sc">+</span>X2020.<span class="fl">05.28</span><span class="sc">+</span>X2020.<span class="fl">05.29</span><span class="sc">+</span>X2020.<span class="fl">05.30</span><span class="sc">+</span>X2020.<span class="fl">05.31</span>)<span class="sc">%&gt;%</span><span class="fu">select</span>(County,Year_2020_05)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the data frame as a CSV file in your working directory</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(April, file = "April.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the data frame as a CSV file in your working directory</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(May, file = "May.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>June<span class="ot">&lt;-</span>friendship<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">Year_2020_06=</span> X2020.<span class="fl">06.01</span><span class="sc">+</span>X2020.<span class="fl">06.02</span><span class="sc">+</span>X2020.<span class="fl">06.03</span><span class="sc">+</span>X2020.<span class="fl">06.07</span><span class="sc">+</span>X2020.<span class="fl">06.08</span><span class="sc">+</span>X2020.<span class="fl">06.09</span><span class="sc">+</span>X2020.<span class="fl">06.10</span><span class="sc">+</span>X2020.<span class="fl">06.11</span><span class="sc">+</span>X2020.<span class="fl">06.12</span><span class="sc">+</span>X2020.<span class="fl">06.13</span><span class="sc">+</span>X2020.<span class="fl">06.14</span><span class="sc">+</span>X2020.<span class="fl">06.15</span><span class="sc">+</span>X2020.<span class="fl">06.16</span><span class="sc">+</span>X2020.<span class="fl">06.17</span><span class="sc">+</span>X2020.<span class="fl">06.18</span><span class="sc">+</span>X2020.<span class="fl">06.19</span><span class="sc">+</span>X2020.<span class="fl">06.20</span><span class="sc">+</span>X2020.<span class="fl">06.21</span><span class="sc">+</span>X2020.<span class="fl">06.22</span><span class="sc">+</span>X2020.<span class="fl">06.23</span><span class="sc">+</span>X2020.<span class="fl">06.24</span><span class="sc">+</span>X2020.<span class="fl">06.25</span><span class="sc">+</span>X2020.<span class="fl">06.26</span><span class="sc">+</span>X2020.<span class="fl">06.27</span><span class="sc">+</span>X2020.<span class="fl">06.28</span><span class="sc">+</span>X2020.<span class="fl">06.29</span><span class="sc">+</span>X2020.<span class="fl">06.30</span>)<span class="sc">%&gt;%</span><span class="fu">select</span>(County,Year_2020_06)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(June)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>July<span class="ot">&lt;-</span>friendship<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">Year_2020_07=</span> X2020.<span class="fl">07.01</span><span class="sc">+</span>X2020.<span class="fl">07.02</span><span class="sc">+</span>X2020.<span class="fl">07.03</span><span class="sc">+</span>X2020.<span class="fl">07.04</span><span class="sc">+</span>X2020.<span class="fl">07.05</span><span class="sc">+</span>X2020.<span class="fl">07.06</span><span class="sc">+</span>X2020.<span class="fl">07.07</span><span class="sc">+</span>X2020.<span class="fl">07.07</span><span class="sc">+</span>X2020.<span class="fl">07.09</span><span class="sc">+</span>X2020.<span class="fl">07.10</span><span class="sc">+</span>X2020.<span class="fl">07.11</span><span class="sc">+</span>X2020.<span class="fl">07.12</span><span class="sc">+</span>X2020.<span class="fl">07.13</span><span class="sc">+</span>X2020.<span class="fl">07.14</span><span class="sc">+</span>X2020.<span class="fl">07.15</span><span class="sc">+</span>X2020.<span class="fl">07.16</span><span class="sc">+</span>X2020.<span class="fl">07.17</span><span class="sc">+</span>X2020.<span class="fl">07.18</span><span class="sc">+</span>X2020.<span class="fl">07.19</span><span class="sc">+</span>X2020.<span class="fl">07.20</span><span class="sc">+</span>X2020.<span class="fl">07.20</span><span class="sc">+</span>X2020.<span class="fl">07.21</span><span class="sc">+</span>X2020.<span class="fl">07.22</span><span class="sc">+</span>X2020.<span class="fl">07.23</span><span class="sc">+</span>X2020.<span class="fl">07.24</span><span class="sc">+</span>X2020.<span class="fl">07.25</span><span class="sc">+</span>X2020.<span class="fl">07.26</span><span class="sc">+</span>X2020.<span class="fl">07.27</span><span class="sc">+</span>X2020.<span class="fl">07.28</span><span class="sc">+</span>X2020.<span class="fl">07.29</span>)<span class="sc">%&gt;%</span><span class="fu">select</span>(County,Year_2020_07)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(July)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the data frame as a CSV file in your working directory</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(June, <span class="at">file =</span> <span class="st">"June.csv"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the data frame as a CSV file in your working directory</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(July, <span class="at">file =</span> <span class="st">"July.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>April <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"April.csv"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>May <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"May.csv"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>June<span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"June.csv"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>July<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"July.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Calls_monthly<span class="ot">&lt;-</span><span class="fu">bind_cols</span>(April,May,June,July )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `X` -&gt; `X...1`
+• `County` -&gt; `County...2`
+• `X` -&gt; `X...4`
+• `County` -&gt; `County...5`
+• `X` -&gt; `X...7`
+• `County` -&gt; `County...8`
+• `X` -&gt; `X...10`
+• `County` -&gt; `County...11`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Calls_monthly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             County Year_2020_04
-1           Alameda          331
-2            Alpine            0
-3            Amador           29
-4             Butte           78
-5         Calaveras           10
-6            Colusa            0
-7      Contra Costa            0
-8         Del Norte            0
-9         El Dorado            0
-10           Fresno          149
-11            Glenn            1
-12         Humboldt           37
-13         Imperial           32
-14             Inyo            3
-15             Kern           82
-16            Kings            4
-17             Lake            5
-18           Lassen            4
-19      Los Angeles            0
-20 Los Angeles City            0
-21           Madera           23
-22            Marin           85
-23         Mariposa            3
-24        Mendocino           39
-25           Merced           23
-26            Modoc            0
-27             Mono            1
-28         Monterey          137
-29             Napa           21
-30           Nevada            9
-31           Orange          550
-32           Placer          103
-33           Plumas            3
-34        Riverside          272
-35       Sacramento          472
-36       San Benito            2
-37   San Bernardino          193
-38        San Diego            0
-39    San Francisco            0
-40      San Joaquin            0
-41  San Luis Obispo           53
-42        San Mateo            0
-43    Santa Barbara            0
-44      Santa Clara          443
-45       Santa Cruz           53
-46           Shasta           23
-47           Sierra            0
-48         Siskiyou            3
-49           Solano           95
-50           Sonoma          103
-51       Stanislaus           65
-52           Sutter            9
-53           Tehama            7
-54          Trinity            1
-55           Tulare           61
-56         Tuolumne           34
-57          Unknown          310
-58          Ventura          133
-59             Yolo           36
-60             Yuba           33</code></pre>
+<pre><code>   X...1       County...2 Year_2020_04 X...4       County...5 Year_2020_05
+1      1          Alameda          331     1          Alameda          316
+2      2           Alpine            0     2           Alpine            0
+3      3           Amador           29     3           Amador           86
+4      4            Butte           78     4            Butte          173
+5      5        Calaveras           10     5        Calaveras           26
+6      6           Colusa            0     6           Colusa            0
+7      7     Contra Costa            0     7     Contra Costa            0
+8      8        Del Norte            0     8        Del Norte            0
+9      9        El Dorado            0     9        El Dorado            0
+10    10           Fresno          149    10           Fresno           63
+11    11            Glenn            1    11            Glenn            1
+12    12         Humboldt           37    12         Humboldt           65
+13    13         Imperial           32    13         Imperial           38
+14    14             Inyo            3    14             Inyo            0
+15    15             Kern           82    15             Kern           66
+16    16            Kings            4    16            Kings            2
+17    17             Lake            5    17             Lake            5
+18    18           Lassen            4    18           Lassen            0
+19    19      Los Angeles            0    19      Los Angeles            0
+20    20 Los Angeles City            0    20 Los Angeles City            0
+21    21           Madera           23    21           Madera           29
+22    22            Marin           85    22            Marin           97
+23    23         Mariposa            3    23         Mariposa            0
+24    24        Mendocino           39    24        Mendocino           50
+25    25           Merced           23    25           Merced           21
+26    26            Modoc            0    26            Modoc            0
+27    27             Mono            1    27             Mono            0
+28    28         Monterey          137    28         Monterey          228
+29    29             Napa           21    29             Napa           32
+30    30           Nevada            9    30           Nevada           33
+31    31           Orange          550    31           Orange          497
+32    32           Placer          103    32           Placer           70
+33    33           Plumas            3    33           Plumas            3
+34    34        Riverside          272    34        Riverside          237
+35    35       Sacramento          472    35       Sacramento          406
+36    36       San Benito            2    36       San Benito            0
+37    37   San Bernardino          193    37   San Bernardino          157
+38    38        San Diego            0    38        San Diego            0
+39    39    San Francisco            0    39    San Francisco            0
+40    40      San Joaquin            0    40      San Joaquin            0
+41    41  San Luis Obispo           53    41  San Luis Obispo           53
+42    42        San Mateo            0    42        San Mateo            0
+43    43    Santa Barbara            0    43    Santa Barbara            0
+44    44      Santa Clara          443    44      Santa Clara          463
+45    45       Santa Cruz           53    45       Santa Cruz           55
+46    46           Shasta           23    46           Shasta           27
+47    47           Sierra            0    47           Sierra            1
+48    48         Siskiyou            3    48         Siskiyou           13
+49    49           Solano           95    49           Solano           39
+50    50           Sonoma          103    50           Sonoma          112
+51    51       Stanislaus           65    51       Stanislaus           38
+52    52           Sutter            9    52           Sutter           12
+53    53           Tehama            7    53           Tehama            2
+54    54          Trinity            1    54          Trinity            2
+55    55           Tulare           61    55           Tulare          117
+56    56         Tuolumne           34    56         Tuolumne           56
+57    57          Unknown          310    57          Unknown          179
+58    58          Ventura          133    58          Ventura          148
+59    59             Yolo           36    59             Yolo           45
+60    60             Yuba           33    60             Yuba           47
+   X...7       County...8 Year_2020_06 X...10      County...11 Year_2020_07
+1      1          Alameda          317      1          Alameda          310
+2      2           Alpine            0      2           Alpine            0
+3      3           Amador           78      3           Amador           68
+4      4            Butte          136      4            Butte          132
+5      5        Calaveras           15      5        Calaveras            7
+6      6           Colusa            0      6           Colusa            0
+7      7     Contra Costa            0      7     Contra Costa            0
+8      8        Del Norte            0      8        Del Norte            0
+9      9        El Dorado            0      9        El Dorado            0
+10    10           Fresno          135     10           Fresno           95
+11    11            Glenn            3     11            Glenn            1
+12    12         Humboldt           48     12         Humboldt           61
+13    13         Imperial            4     13         Imperial           13
+14    14             Inyo            0     14             Inyo            1
+15    15             Kern           38     15             Kern           58
+16    16            Kings            3     16            Kings           17
+17    17             Lake            3     17             Lake            1
+18    18           Lassen            0     18           Lassen            0
+19    19      Los Angeles            0     19      Los Angeles            0
+20    20 Los Angeles City            0     20 Los Angeles City            0
+21    21           Madera           26     21           Madera           13
+22    22            Marin           73     22            Marin           98
+23    23         Mariposa            3     23         Mariposa            0
+24    24        Mendocino           23     24        Mendocino           57
+25    25           Merced           29     25           Merced           33
+26    26            Modoc            0     26            Modoc            1
+27    27             Mono            0     27             Mono            0
+28    28         Monterey          155     28         Monterey          261
+29    29             Napa           11     29             Napa            9
+30    30           Nevada           18     30           Nevada            3
+31    31           Orange          306     31           Orange          337
+32    32           Placer           39     32           Placer           94
+33    33           Plumas            1     33           Plumas            0
+34    34        Riverside          254     34        Riverside          244
+35    35       Sacramento          349     35       Sacramento          331
+36    36       San Benito            0     36       San Benito            1
+37    37   San Bernardino          132     37   San Bernardino          142
+38    38        San Diego            0     38        San Diego            0
+39    39    San Francisco            0     39    San Francisco            0
+40    40      San Joaquin            0     40      San Joaquin            0
+41    41  San Luis Obispo           45     41  San Luis Obispo           58
+42    42        San Mateo            0     42        San Mateo            0
+43    43    Santa Barbara            0     43    Santa Barbara            0
+44    44      Santa Clara          251     44      Santa Clara          288
+45    45       Santa Cruz           59     45       Santa Cruz           60
+46    46           Shasta           13     46           Shasta           16
+47    47           Sierra            0     47           Sierra            0
+48    48         Siskiyou            2     48         Siskiyou            6
+49    49           Solano           39     49           Solano           56
+50    50           Sonoma          121     50           Sonoma          204
+51    51       Stanislaus           28     51       Stanislaus           47
+52    52           Sutter            4     52           Sutter            8
+53    53           Tehama            4     53           Tehama            8
+54    54          Trinity            0     54          Trinity            1
+55    55           Tulare           94     55           Tulare          118
+56    56         Tuolumne           21     56         Tuolumne           44
+57    57          Unknown          251     57          Unknown          462
+58    58          Ventura          135     58          Ventura          108
+59    59             Yolo           33     59             Yolo           35
+60    60             Yuba           45     60             Yuba           38</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Tidy_calls_monthly<span class="ot">&lt;-</span>Calls_monthly<span class="sc">%&gt;%</span><span class="fu">select</span>(County...<span class="dv">2</span>,Year_2020_04,Year_2020_05,Year_2020_06,Year_2020_07)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tidy_calls_monthly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         County...2 Year_2020_04 Year_2020_05 Year_2020_06 Year_2020_07
+1           Alameda          331          316          317          310
+2            Alpine            0            0            0            0
+3            Amador           29           86           78           68
+4             Butte           78          173          136          132
+5         Calaveras           10           26           15            7
+6            Colusa            0            0            0            0
+7      Contra Costa            0            0            0            0
+8         Del Norte            0            0            0            0
+9         El Dorado            0            0            0            0
+10           Fresno          149           63          135           95
+11            Glenn            1            1            3            1
+12         Humboldt           37           65           48           61
+13         Imperial           32           38            4           13
+14             Inyo            3            0            0            1
+15             Kern           82           66           38           58
+16            Kings            4            2            3           17
+17             Lake            5            5            3            1
+18           Lassen            4            0            0            0
+19      Los Angeles            0            0            0            0
+20 Los Angeles City            0            0            0            0
+21           Madera           23           29           26           13
+22            Marin           85           97           73           98
+23         Mariposa            3            0            3            0
+24        Mendocino           39           50           23           57
+25           Merced           23           21           29           33
+26            Modoc            0            0            0            1
+27             Mono            1            0            0            0
+28         Monterey          137          228          155          261
+29             Napa           21           32           11            9
+30           Nevada            9           33           18            3
+31           Orange          550          497          306          337
+32           Placer          103           70           39           94
+33           Plumas            3            3            1            0
+34        Riverside          272          237          254          244
+35       Sacramento          472          406          349          331
+36       San Benito            2            0            0            1
+37   San Bernardino          193          157          132          142
+38        San Diego            0            0            0            0
+39    San Francisco            0            0            0            0
+40      San Joaquin            0            0            0            0
+41  San Luis Obispo           53           53           45           58
+42        San Mateo            0            0            0            0
+43    Santa Barbara            0            0            0            0
+44      Santa Clara          443          463          251          288
+45       Santa Cruz           53           55           59           60
+46           Shasta           23           27           13           16
+47           Sierra            0            1            0            0
+48         Siskiyou            3           13            2            6
+49           Solano           95           39           39           56
+50           Sonoma          103          112          121          204
+51       Stanislaus           65           38           28           47
+52           Sutter            9           12            4            8
+53           Tehama            7            2            4            8
+54          Trinity            1            2            0            1
+55           Tulare           61          117           94          118
+56         Tuolumne           34           56           21           44
+57          Unknown          310          179          251          462
+58          Ventura          133          148          135          108
+59             Yolo           36           45           33           35
+60             Yuba           33           47           45           38</code></pre>
 </div>
 </div>
 
