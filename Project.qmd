@@ -3,12 +3,12 @@ title: Project
 ---
 
 
-```{r}
+```{r,echo=FALSE,eval=TRUE}
 library(tidyverse)
 ```
 
 
-```{r, eval=FALSE}
+```{r, echo=FALSE,eval=FALSE}
 friendship<-read.csv("Covid_calls.csv")
 friendship
 glimpse(friendship)
@@ -20,41 +20,40 @@ library(dplyr)
 
 ```
 
-```{r, eval=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 April<-friendship%>%mutate(Year_2020_04=X2020.04.15+ X2020.04.16+X2020.04.17+X2020.04.17+X2020.04.18+X2020.04.19+X2020.04.20+X2020.04.21+X2020.04.22+X2020.04.23+X2020.04.24+X2020.04.25+X2020.04.26+X2020.04.27+X2020.04.28+X2020.04.29+X2020.04.30)%>%select(County,Year_2020_04)
-
 
 print(April)
 ```
 
-```{r, eval=FALSE}
+```{r, echo=FALSE,eval=FALSE}
 May<-friendship%>%mutate(Year_2020_05= X2020.05.01+X2020.05.02+X2020.05.03+X2020.05.04+X2020.05.05+X2020.05.06+X2020.05.07+X2020.05.08+X2020.05.09+X2020.05.10+X2020.05.11+X2020.05.12+X2020.05.13+X2020.05.14+X2020.05.15+X2020.05.16+X2020.05.17+X2020.05.18+X2020.05.19+X2020.05.20+X2020.05.21+X2020.05.22+X2020.05.23+X2020.05.24+X2020.05.25+X2020.05.26+X2020.05.27+X2020.05.28+X2020.05.29+X2020.05.30+X2020.05.31)%>%select(County,Year_2020_05)
 ```
 
-```{r}
+```{r,echo=FALSE}
 # Save the data frame as a CSV file in your working directory
 #write.csv(April, file = "April.csv")
 ```
 
-```{r}
+```{r,echo=FALSE}
 # Save the data frame as a CSV file in your working directory
 #write.csv(May, file = "May.csv")
 ```
 
-```{r,eval=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 June<-friendship%>%mutate(Year_2020_06= X2020.06.01+X2020.06.02+X2020.06.03+X2020.06.07+X2020.06.08+X2020.06.09+X2020.06.10+X2020.06.11+X2020.06.12+X2020.06.13+X2020.06.14+X2020.06.15+X2020.06.16+X2020.06.17+X2020.06.18+X2020.06.19+X2020.06.20+X2020.06.21+X2020.06.22+X2020.06.23+X2020.06.24+X2020.06.25+X2020.06.26+X2020.06.27+X2020.06.28+X2020.06.29+X2020.06.30)%>%select(County,Year_2020_06)
 
 print(June)
 
 ```
 
-```{r,eval=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 July<-friendship%>%mutate(Year_2020_07= X2020.07.01+X2020.07.02+X2020.07.03+X2020.07.04+X2020.07.05+X2020.07.06+X2020.07.07+X2020.07.07+X2020.07.09+X2020.07.10+X2020.07.11+X2020.07.12+X2020.07.13+X2020.07.14+X2020.07.15+X2020.07.16+X2020.07.17+X2020.07.18+X2020.07.19+X2020.07.20+X2020.07.20+X2020.07.21+X2020.07.22+X2020.07.23+X2020.07.24+X2020.07.25+X2020.07.26+X2020.07.27+X2020.07.28+X2020.07.29)%>%select(County,Year_2020_07)
 
 print(July)
 ```
 
-```{r,eval=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 # Save the data frame as a CSV file in your working directory
 write.csv(June, file = "June.csv")
 
@@ -63,33 +62,61 @@ write.csv(July, file = "July.csv")
 
 ```
 
-```{r}
+```{r,echo=FALSE}
 April <- read.csv("April.csv")
 May <- read.csv("May.csv")
 June<- read.csv("June.csv")
 July<-read.csv("July.csv")
 ```
 
-```{r}
+```{r,echo=FALSE,eval=FALSE}
 
 Calls_monthly<-bind_cols(April,May,June,July )
 
 print(Calls_monthly)
 ```
 
-```{r}
+```{r,echo=FALSE,eval=FALSE}
+# Save the data frame as a CSV file in your working directory
+write.csv(Calls_monthly, file = "Calls_monthly.csv")
+```
+
+```{r,echo=FALSE}
+Calls_monthly<-read.csv("Calls_monthly.csv")
+
 Tidy_calls_monthly<-Calls_monthly%>%select(County...2,Year_2020_04,Year_2020_05,Year_2020_06,Year_2020_07)
 
 print(Tidy_calls_monthly)
-
-```
-```{r}
-
-```
-
-```{r}
+#data is called "County...2"
 
 ```
 
+
+```{r,echo=FALSE,eval=TRUE}
+Scatter<-ggplot(data=Tidy_calls_monthly,mapping=aes(x=Year_2020_04+Year_2020_05+Year_2020_06+Year_2020_07,y=County...2,colour=County...2))+geom_point()+labs(title ="Number of Friendship Calls overtime",subtitle = "per County in California during 2020" ,x="April 2020 to July 2020",y="Number of calls",colour="County",caption = "source:Data World,California Health and Human Services(CHHS) ")+scale_color_viridis_d()
+
+print(Scatter)
+```
+
+```{r,echo=FALSE}
+#install.packages("gapminder")
+```
+
+```{r,echo=FALSE}
+#install.packages("babynames")
+```
+
+```{r,echo=FALSE,eval=TRUE}
+library(plotly)
+library(ggplot2)
+```
+
+
+```{r,echo=FALSE,eval=TRUE}
+interactive_scatter<-ggplotly(Scatter)
+
+interactive_scatter
+
+```
 
 

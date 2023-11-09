@@ -1,0 +1,61 @@
+"","X...1","County...2","Year_2020_04","X...4","County...5","Year_2020_05","X...7","County...8","Year_2020_06","X...10","County...11","Year_2020_07"
+"1",1,"Alameda",331,1,"Alameda",316,1,"Alameda",317,1,"Alameda",310
+"2",2,"Alpine",0,2,"Alpine",0,2,"Alpine",0,2,"Alpine",0
+"3",3,"Amador",29,3,"Amador",86,3,"Amador",78,3,"Amador",68
+"4",4,"Butte",78,4,"Butte",173,4,"Butte",136,4,"Butte",132
+"5",5,"Calaveras",10,5,"Calaveras",26,5,"Calaveras",15,5,"Calaveras",7
+"6",6,"Colusa",0,6,"Colusa",0,6,"Colusa",0,6,"Colusa",0
+"7",7,"Contra Costa",0,7,"Contra Costa",0,7,"Contra Costa",0,7,"Contra Costa",0
+"8",8,"Del Norte",0,8,"Del Norte",0,8,"Del Norte",0,8,"Del Norte",0
+"9",9,"El Dorado",0,9,"El Dorado",0,9,"El Dorado",0,9,"El Dorado",0
+"10",10,"Fresno",149,10,"Fresno",63,10,"Fresno",135,10,"Fresno",95
+"11",11,"Glenn",1,11,"Glenn",1,11,"Glenn",3,11,"Glenn",1
+"12",12,"Humboldt",37,12,"Humboldt",65,12,"Humboldt",48,12,"Humboldt",61
+"13",13,"Imperial",32,13,"Imperial",38,13,"Imperial",4,13,"Imperial",13
+"14",14,"Inyo",3,14,"Inyo",0,14,"Inyo",0,14,"Inyo",1
+"15",15,"Kern",82,15,"Kern",66,15,"Kern",38,15,"Kern",58
+"16",16,"Kings",4,16,"Kings",2,16,"Kings",3,16,"Kings",17
+"17",17,"Lake",5,17,"Lake",5,17,"Lake",3,17,"Lake",1
+"18",18,"Lassen",4,18,"Lassen",0,18,"Lassen",0,18,"Lassen",0
+"19",19,"Los Angeles",0,19,"Los Angeles",0,19,"Los Angeles",0,19,"Los Angeles",0
+"20",20,"Los Angeles City",0,20,"Los Angeles City",0,20,"Los Angeles City",0,20,"Los Angeles City",0
+"21",21,"Madera",23,21,"Madera",29,21,"Madera",26,21,"Madera",13
+"22",22,"Marin",85,22,"Marin",97,22,"Marin",73,22,"Marin",98
+"23",23,"Mariposa",3,23,"Mariposa",0,23,"Mariposa",3,23,"Mariposa",0
+"24",24,"Mendocino",39,24,"Mendocino",50,24,"Mendocino",23,24,"Mendocino",57
+"25",25,"Merced",23,25,"Merced",21,25,"Merced",29,25,"Merced",33
+"26",26,"Modoc",0,26,"Modoc",0,26,"Modoc",0,26,"Modoc",1
+"27",27,"Mono",1,27,"Mono",0,27,"Mono",0,27,"Mono",0
+"28",28,"Monterey",137,28,"Monterey",228,28,"Monterey",155,28,"Monterey",261
+"29",29,"Napa",21,29,"Napa",32,29,"Napa",11,29,"Napa",9
+"30",30,"Nevada",9,30,"Nevada",33,30,"Nevada",18,30,"Nevada",3
+"31",31,"Orange",550,31,"Orange",497,31,"Orange",306,31,"Orange",337
+"32",32,"Placer",103,32,"Placer",70,32,"Placer",39,32,"Placer",94
+"33",33,"Plumas",3,33,"Plumas",3,33,"Plumas",1,33,"Plumas",0
+"34",34,"Riverside",272,34,"Riverside",237,34,"Riverside",254,34,"Riverside",244
+"35",35,"Sacramento",472,35,"Sacramento",406,35,"Sacramento",349,35,"Sacramento",331
+"36",36,"San Benito",2,36,"San Benito",0,36,"San Benito",0,36,"San Benito",1
+"37",37,"San Bernardino",193,37,"San Bernardino",157,37,"San Bernardino",132,37,"San Bernardino",142
+"38",38,"San Diego",0,38,"San Diego",0,38,"San Diego",0,38,"San Diego",0
+"39",39,"San Francisco",0,39,"San Francisco",0,39,"San Francisco",0,39,"San Francisco",0
+"40",40,"San Joaquin",0,40,"San Joaquin",0,40,"San Joaquin",0,40,"San Joaquin",0
+"41",41,"San Luis Obispo",53,41,"San Luis Obispo",53,41,"San Luis Obispo",45,41,"San Luis Obispo",58
+"42",42,"San Mateo",0,42,"San Mateo",0,42,"San Mateo",0,42,"San Mateo",0
+"43",43,"Santa Barbara",0,43,"Santa Barbara",0,43,"Santa Barbara",0,43,"Santa Barbara",0
+"44",44,"Santa Clara",443,44,"Santa Clara",463,44,"Santa Clara",251,44,"Santa Clara",288
+"45",45,"Santa Cruz",53,45,"Santa Cruz",55,45,"Santa Cruz",59,45,"Santa Cruz",60
+"46",46,"Shasta",23,46,"Shasta",27,46,"Shasta",13,46,"Shasta",16
+"47",47,"Sierra",0,47,"Sierra",1,47,"Sierra",0,47,"Sierra",0
+"48",48,"Siskiyou",3,48,"Siskiyou",13,48,"Siskiyou",2,48,"Siskiyou",6
+"49",49,"Solano",95,49,"Solano",39,49,"Solano",39,49,"Solano",56
+"50",50,"Sonoma",103,50,"Sonoma",112,50,"Sonoma",121,50,"Sonoma",204
+"51",51,"Stanislaus",65,51,"Stanislaus",38,51,"Stanislaus",28,51,"Stanislaus",47
+"52",52,"Sutter",9,52,"Sutter",12,52,"Sutter",4,52,"Sutter",8
+"53",53,"Tehama",7,53,"Tehama",2,53,"Tehama",4,53,"Tehama",8
+"54",54,"Trinity",1,54,"Trinity",2,54,"Trinity",0,54,"Trinity",1
+"55",55,"Tulare",61,55,"Tulare",117,55,"Tulare",94,55,"Tulare",118
+"56",56,"Tuolumne",34,56,"Tuolumne",56,56,"Tuolumne",21,56,"Tuolumne",44
+"57",57,"Unknown",310,57,"Unknown",179,57,"Unknown",251,57,"Unknown",462
+"58",58,"Ventura",133,58,"Ventura",148,58,"Ventura",135,58,"Ventura",108
+"59",59,"Yolo",36,59,"Yolo",45,59,"Yolo",33,59,"Yolo",35
+"60",60,"Yuba",33,60,"Yuba",47,60,"Yuba",45,60,"Yuba",38
