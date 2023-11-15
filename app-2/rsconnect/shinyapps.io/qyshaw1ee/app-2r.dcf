@@ -1,0 +1,12 @@
+name: app-2r
+title: app-2r
+username: qyshaw1ee
+account: qyshaw1ee
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10529718
+bundleId: 7930196
+url: https://qyshaw1ee.shinyapps.io/app-2r/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

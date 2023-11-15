@@ -3,22 +3,19 @@ title: Project
 ---
 
 
-```{r,echo=FALSE,eval=TRUE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(tidyverse)
+library(magrittr)
+library(dplyr)
 ```
 
 
-```{r, echo=FALSE,eval=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 friendship<-read.csv("Covid_calls.csv")
 friendship
 glimpse(friendship)
 ```
 
-```{r,echo=FALSE,eval=TRUE}
-library(magrittr)
-library(dplyr)
-
-```
 
 ```{r,echo=FALSE,eval=FALSE}
 April<-friendship%>%mutate(Year_2020_04=X2020.04.15+ X2020.04.16+X2020.04.17+X2020.04.17+X2020.04.18+X2020.04.19+X2020.04.20+X2020.04.21+X2020.04.22+X2020.04.23+X2020.04.24+X2020.04.25+X2020.04.26+X2020.04.27+X2020.04.28+X2020.04.29+X2020.04.30)%>%select(County,Year_2020_04)
@@ -85,14 +82,17 @@ write.csv(Calls_monthly, file = "Calls_monthly.csv")
 Calls_monthly<-read.csv("Calls_monthly.csv")
 
 Tidy_calls_monthly<-Calls_monthly%>%select(County...2,Year_2020_04,Year_2020_05,Year_2020_06,Year_2020_07)
-
+Tidy_calls_monthly<-rename(Tidy_calls_monthly,Counties="County...2","April"="Year_2020_04","May"="Year_2020_05","June"="Year_2020_06","July"="Year_2020_07")
 print(Tidy_calls_monthly)
-#data is called "County...2"
+Tidy_calls_monthly<- pivot_longer(Tidy_calls_monthly,cols=April:July,names_to ="Month",values_to ="Number of Calls")
 
 ```
 
+```{r,echo=FALSE}
+#write.csv(Tidy_calls_monthly, file = "Tidy_calls_monthly.csv")
+```
 
-```{r,echo=FALSE,eval=TRUE}
+```{r,echo=FALSE,eval=FALSE}
 Scatter<-ggplot(data=Tidy_calls_monthly,mapping=aes(x=Year_2020_04+Year_2020_05+Year_2020_06+Year_2020_07,y=County...2,colour=County...2))+geom_point()+labs(title ="Number of Friendship Calls overtime",subtitle = "per County in California during 2020" ,x="April 2020 to July 2020",y="Number of calls",colour="County",caption = "source:Data World,California Health and Human Services(CHHS) ")+scale_color_viridis_d()
 
 print(Scatter)
@@ -106,17 +106,27 @@ print(Scatter)
 #install.packages("babynames")
 ```
 
-```{r,echo=FALSE,eval=TRUE}
+```{r,echo=FALSE,eval=FALSE}
 library(plotly)
 library(ggplot2)
 ```
 
 
-```{r,echo=FALSE,eval=TRUE}
+```{r,echo=FALSE,eval=FALSE}
 interactive_scatter<-ggplotly(Scatter)
 
 interactive_scatter
 
 ```
 
+<iframe height="400" width="100%" frameborder="no" src="https://qyshaw1ee.shinyapps.io/appR/"> </iframe>
 
+<iframe height="400" width="100%" frameborder="no" src="https://qyshaw1ee.shinyapps.io/app-2r/"> </iframe>
+
+```{r}
+
+```
+
+```{r}
+
+```

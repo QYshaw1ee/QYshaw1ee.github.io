@@ -6,11 +6,11 @@ title: "Hello, I am Chloe!"
 
 Here is me after the Barbie Movie, I personally think the movie reconnected me to appreciate glamorizing life. It sounds funny how someone with my major combination would like the idea, but I can assure you its just my unqiue self!
 
-```{r,eval=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 
 #| eval=FALSE
  #| out.width="100%"
- knitr::include_graphics("C:/Users/chloe/OneDrive/Documents/githubQYshaw1ee.github.io/Barbie_Movie.jpg")
+ knitr::include_graphics("C:/Website/githubQYshaw1ee.github.io/Barbie_Movie.jpg")
 
 ```
 

@@ -1,0 +1,12 @@
+name: appR
+title: appR
+username: qyshaw1ee
+account: qyshaw1ee
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10529704
+bundleId: 7930167
+url: https://qyshaw1ee.shinyapps.io/appR/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
