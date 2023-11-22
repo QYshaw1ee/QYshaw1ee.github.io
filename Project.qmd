@@ -1,14 +1,23 @@
 ---
 title: Project
 ---
+# Its okay not to be okay
+*If you are feeling not okay,its okay. If your feeling blue, Friendship line services is the way for you!*
 
+I want to see if Friendship line services are used by people to feel less lonely and isolated. 
+
+### Are Friendship-line Services relevant in California?
+
+To investigate, lets look at the total number of calls in each county from California! 
+
+#### [Here is the original dataset, which is super messy] 
+(https://data.world/chhs/d71df234-7ba1-42e7-98bc-160a55beb7d1)
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(tidyverse)
 library(magrittr)
 library(dplyr)
 ```
-
 
 ```{r,echo=FALSE,eval=FALSE}
 friendship<-read.csv("Covid_calls.csv")
@@ -77,8 +86,12 @@ print(Calls_monthly)
 # Save the data frame as a CSV file in your working directory
 write.csv(Calls_monthly, file = "Calls_monthly.csv")
 ```
+### Monthly number of Friendship calls in each county 
+###### Tidied data (much easier to read)
 
-```{r,echo=FALSE}
+Thats a lot of numbers! 
+
+```{r,echo=FALSE,eval=TRUE}
 Calls_monthly<-read.csv("Calls_monthly.csv")
 
 Tidy_calls_monthly<-Calls_monthly%>%select(County...2,Year_2020_04,Year_2020_05,Year_2020_06,Year_2020_07)
@@ -88,6 +101,7 @@ Tidy_calls_monthly<- pivot_longer(Tidy_calls_monthly,cols=April:July,names_to ="
 
 ```
 
+BUT! We want to see how each county has utilized Friendship calls as the Covid-19 pandemic goes on from April to July 2020. 
 ```{r,echo=FALSE}
 #write.csv(Tidy_calls_monthly, file = "Tidy_calls_monthly.csv")
 ```
@@ -98,19 +112,10 @@ Scatter<-ggplot(data=Tidy_calls_monthly,mapping=aes(x=Year_2020_04+Year_2020_05+
 print(Scatter)
 ```
 
-```{r,echo=FALSE}
-#install.packages("gapminder")
-```
-
-```{r,echo=FALSE}
-#install.packages("babynames")
-```
-
 ```{r,echo=FALSE,eval=FALSE}
 library(plotly)
 library(ggplot2)
 ```
-
 
 ```{r,echo=FALSE,eval=FALSE}
 interactive_scatter<-ggplotly(Scatter)
@@ -119,9 +124,38 @@ interactive_scatter
 
 ```
 
+Counties with 0 or No change in Friendship calls are depicted with a straight line.
+## Do not be assuming!
+
+### Counties with a drastic change in Friendship calls made should not be overstated! 
+###### (Fresco, Orange,Sonoma,Santa Clara,Monterey,Humboldt)
+Each County has their axis changed in proportion to the number of calls made in their county which is exclusive from another county!Therefore, we can only see how each county has progressed (or regressed) in the number of Friendship calls used!
+
 <iframe height="400" width="100%" frameborder="no" src="https://qyshaw1ee.shinyapps.io/appR/"> </iframe>
 
+*The calls fluctuate like how my hormones fluctuate lol*
+
+In all seriousness, Friendship line services are pretty relevant in more than half of the counties in California. 
+
+### Lets compare the differences between each County!
+
+*We can see the disparities between the counties much clearer below!*
+
+*The HIGHEST number of calls is over a 1,500 from Orange County! While the Least number of calls is Los Angeles, San Diego and many more with 0 calls! Now that is scary!* 
+
 <iframe height="400" width="100%" frameborder="no" src="https://qyshaw1ee.shinyapps.io/app-2r/"> </iframe>
+
+Based on the call Summary table, we can come to 2 conclusions,
+
+ The disparities between the top 15% of counties and the bottom 15% are shocking! We can see how Friendship line services are utilized or not.  
+Friendship calls are relevant in some places like Sacramento, Riverside and Monterrey, but places like El Dorado, San Diego, San Francisco do not find them relevant at all. 
+
+However, we do need to take into account other factors like Demographics, the culture of the people in the County and how harsh did Covid-19 impact their lives in terms of communication with people, if they could commute to other places. 
+
+Its shocking to think that only 20% of Counties in California have an average of at least 100 Friendship calls per month from April to July 2020!
+
+Friendship services are not fully utilised in the counties of California, I guess the next time is to start utilising them! 
+
 
 ```{r}
 
