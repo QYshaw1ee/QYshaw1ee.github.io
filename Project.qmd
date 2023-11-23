@@ -130,7 +130,7 @@ interactive_scatter
 
 ```
 
-## Frienship calls for each County
+## Friendship calls for each County
 
 lets investigate how relevant are each County's friendship line services. But I must warn you, we cannot be assuming! 
 
