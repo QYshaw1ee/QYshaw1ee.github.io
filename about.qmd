@@ -4,4 +4,19 @@ title: "About"
 
 This site was birthed as part of my nm2207 course and I much appreciate this skill we are learning. I hope to add many more projects and improve my website building skills :)
 
+#### I am a year 2 Political Science and Anthropology student!
+
+"Why political science and Anthropology?" you may ask. 
+
+Well, I appreciate understanding human culture and what makes a person unique and I believe good policies can help improve people's lives so that they can experience improvements in their lives. 
+
+Which is probably why most of the stuff I write about (like my NM2207 Project) involves some kind of investigation and perhaps some recommendations to improve the situation! I find this my way of helping people :)
+
+#### Focus on the Positivity of things
+
+```{r, echo=FALSE, eval=TRUE}
+#| eval=TRUE
+  #| out.width="100%"
+knitr::include_graphics("C:/Website/githubQYshaw1ee.github.io/Happy_Girl_icon.png")
+```
 

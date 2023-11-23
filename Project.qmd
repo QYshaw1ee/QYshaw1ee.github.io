@@ -1,16 +1,23 @@
 ---
 title: Project
 ---
-# Its okay not to be okay
+# Its Okay not to be Okay
 *If you are feeling not okay,its okay. If your feeling blue, Friendship line services is the way for you!*
 
 I want to see if Friendship line services are used by people to feel less lonely and isolated. 
 
-### Are Friendship-line Services relevant in California?
+## Are Friendship-line Services relevant in California?
 
-To investigate, lets look at the total number of calls in each county from California! 
+First, lets define, 
 
-#### [Here is the original dataset, which is super messy] 
+###### What are Friendship Line Services? 
+
+Friendship-line services are services where people may make anonymous calls when their feeling blue. I think this is especially important during the Covid-19 Pandemic where lock downs meant we couldn't easily talk to people (face to face at least). 
+
+
+To investigate if Friendship-line Services are relevant, lets look at the total number of calls in each county from California since I chose to use California as a case study. 
+
+[Here is the original data set, which is super messy] 
 (https://data.world/chhs/d71df234-7ba1-42e7-98bc-160a55beb7d1)
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
@@ -24,7 +31,6 @@ friendship<-read.csv("Covid_calls.csv")
 friendship
 glimpse(friendship)
 ```
-
 
 ```{r,echo=FALSE,eval=FALSE}
 April<-friendship%>%mutate(Year_2020_04=X2020.04.15+ X2020.04.16+X2020.04.17+X2020.04.17+X2020.04.18+X2020.04.19+X2020.04.20+X2020.04.21+X2020.04.22+X2020.04.23+X2020.04.24+X2020.04.25+X2020.04.26+X2020.04.27+X2020.04.28+X2020.04.29+X2020.04.30)%>%select(County,Year_2020_04)
@@ -87,9 +93,9 @@ print(Calls_monthly)
 write.csv(Calls_monthly, file = "Calls_monthly.csv")
 ```
 ### Monthly number of Friendship calls in each county 
-###### Tidied data (much easier to read)
+Lets look at a Tidied data set (which is much easier to read!)
 
-Thats a lot of numbers! 
+(Thats a lot of numbers and Counties!) 
 
 ```{r,echo=FALSE,eval=TRUE}
 Calls_monthly<-read.csv("Calls_monthly.csv")
@@ -124,37 +130,74 @@ interactive_scatter
 
 ```
 
-Counties with 0 or No change in Friendship calls are depicted with a straight line.
-## Do not be assuming!
+## Frienship calls for each County
+
+lets investigate how relevant are each County's friendship line services. But I must warn you, we cannot be assuming! 
 
 ### Counties with a drastic change in Friendship calls made should not be overstated! 
-###### (Fresco, Orange,Sonoma,Santa Clara,Monterey,Humboldt)
-Each County has their axis changed in proportion to the number of calls made in their county which is exclusive from another county!Therefore, we can only see how each county has progressed (or regressed) in the number of Friendship calls used!
+
+###### Fresco, Orange,Sonoma,Santa Clara,Monterey,Humboldt
+
+These counties ^ have crazy fluctuations throughout the 4 months. However, we need to remember these 2 important points: 
+
+*Each County has their vertical axis adjusted in proportion to the number of calls made in each respective county! Therefore, we can only see how each county has progressed (or regressed) in their number of Friendship calls, hence we cannot compare the progress of each county compared to another using the graphs because they are misleading!*
+
+*The data set records 4 months which is 1/3rd of a year. The pandemic went on from 2020 to 2022 so really the data set cannot represent if people found their counties Friendship-line services relevant since the data set only covers 11.1% of the Pandemic since the start from January 2020 to December 2022 *
+
+
+### The curious case of some counties: 
+
+###### San Diego, Santa Barbara , Los Angeles, El Dorado, Colus  
+
+These counties are interesting because they have 0 or No change in Friendship calls. On the graph, they are depicted with a straight line. They can also inform policy analysis or ministries that these counties should be further investigated to discover the reason why there are literally no calls made. 
 
 <iframe height="400" width="100%" frameborder="no" src="https://qyshaw1ee.shinyapps.io/appR/"> </iframe>
 
 *The calls fluctuate like how my hormones fluctuate lol*
 
-In all seriousness, Friendship line services are pretty relevant in more than half of the counties in California. 
+In all seriousness, based on the data set, Friendship line services are pretty relevant in more than half of the counties in California because we see how their services are utilized. Lets compare the differences between each county! 
 
-### Lets compare the differences between each County!
+## Calls summary by County!
 
-*We can see the disparities between the counties much clearer below!*
+*We can see the disparities between the counties much clearer in the summary below!*
 
-*The HIGHEST number of calls is over a 1,500 from Orange County! While the Least number of calls is Los Angeles, San Diego and many more with 0 calls! Now that is scary!* 
+*The HIGHEST number of calls is over a 1,500 from Orange County! While the counties with the LEAST number of calls is Los Angeles, San Diego and many more with 0 calls! Now that is scary!* 
 
 <iframe height="400" width="100%" frameborder="no" src="https://qyshaw1ee.shinyapps.io/app-2r/"> </iframe>
 
-Based on the call Summary table, we can come to 2 conclusions,
+
+### Conclusions and Future actions!
 
  The disparities between the top 15% of counties and the bottom 15% are shocking! We can see how Friendship line services are utilized or not.  
 Friendship calls are relevant in some places like Sacramento, Riverside and Monterrey, but places like El Dorado, San Diego, San Francisco do not find them relevant at all. 
 
 However, we do need to take into account other factors like Demographics, the culture of the people in the County and how harsh did Covid-19 impact their lives in terms of communication with people, if they could commute to other places. 
 
-Its shocking to think that only 20% of Counties in California have an average of at least 100 Friendship calls per month from April to July 2020!
+Its shocking to think that only 20% of Counties in California have an average of more than 100 Friendship calls per month from April to July 2020!
 
-Friendship services are not fully utilised in the counties of California, I guess the next time is to start utilising them! 
+Personally, I think 100 is to little in comparison to the average population of 658 Thousands of Californians across the Counties of California! (rounded to nearest 3sf)
+
+[Statisitics of Californian population in 2020]
+(https://worldpopulationreview.com/states/california-population)
+
+Friendship services are not fully utilized in the counties of California, I guess the next step is to start utilizing them! 
+
+#### Why must we take Future Actions?
+
+Well, as I have said earlier, People may experience loneliness and this can be bad because there is a higher likelihood of their immunity weakening and poor mental health.
+
+I personally think Friendship-line services can help people feel less lonely because they essentially provide a space for a person to communicate with someone who will listen to them. As the political science and anthropology student I am, I suggest there are a few steps to take to better utilize Friendship-liner services so that they become relevant in people's lives. 
+
+1) Find out whats causing the above phenomenon. County services could investigate why people do not want to use service and how they can encourage to use service more. Would it because people do not know about Friendship-line services? Are people too busy so they cannot use these services? 
+
+2) We can provide more avenues for Friendship calls to take place. eg more hotline numbers
+
+3) Lastly, we can encourage people to use friendship-line services. We can show people there is no shame in using Friendship-line services because we need someone to talk to. Talking to people who are there to help you can have a more positive impact than you think. 
+All in all, 
+
+# Its Okay not to be Okay.
+
+*so,do not feel alone and pick up the phone!*  
 
 
 ```{r}
